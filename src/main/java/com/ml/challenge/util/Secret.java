@@ -81,18 +81,16 @@ public abstract class Secret {
 
         //Validamos los radios Con las coordenadas
         if (!circlesIntersect(kenobiSatellite.getPosition(), kenobiSatellite.getDistance(), skywalkerSatellite.getPosition(), skywalkerSatellite.getDistance())) {
-            throw new UnknownPositionException("Valor no disponible...");
+            throw new UnknownPositionException("Imposible Determinar la distancia con los valores obtenidos...");
         } else if (!circlesIntersect(kenobiSatellite.getPosition(), kenobiSatellite.getDistance(), satoSatellite.getPosition(), satoSatellite.getDistance())) {
-            throw new UnknownPositionException("Valor no disponible...");
+            throw new UnknownPositionException("Imposible Determinar la distancia con los valores obtenidos...");
         } else if (!circlesIntersect(skywalkerSatellite.getPosition(), skywalkerSatellite.getDistance(), satoSatellite.getPosition(), satoSatellite.getDistance())) {
-            throw new UnknownPositionException("Valor no disponible...");
+            throw new UnknownPositionException("Imposible Determinar la distancia con los valores obtenidos...");
         }
 
         double valuey = (((x2 - x1) * ((x3 * x3) + (y3 * y3) - (r3 * r3))) + ((x1 - x3) * ((x2 * x2) + (y2 * y2) - (r2 * r2))) + ((x3 - x2) * ((x1 * x1) + (y1 * y1) - (r1 * r1)))) / (2 * (y3 * (x2 - x1) + (y2 * (x1 - x3)) + (y1 * (x3 - x2))));
 
         double valuex = ((r2 * r2) + (x1 * x1) + (y1 * y1) - (r1 * r1) - (x2 * x2) - (y2 * y2) - (2 * (y1 - y2) * valuey)) / (2 * (x1 - x2));
-
-        System.out.println("Valores x: " + valuex + ", y: " + valuey);
         
         valuex = Math.floor(valuex * 100) / 100;
         valuey = Math.floor(valuey * 100) / 100;

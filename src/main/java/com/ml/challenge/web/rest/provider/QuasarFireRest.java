@@ -41,9 +41,7 @@ public class QuasarFireRest {
         } catch (MlException ex) {
             ErrorRS er = new ErrorRS();
             er.setDescription(ex.getMessage());
-            if (ex.getCodigo() != null) {
-                er.setCode(ex.getCodigo().toString());
-            }
+            er.setCode(ex.getClass().getSimpleName());
             return new ResponseEntity(er, HttpStatus.NOT_FOUND);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -61,9 +59,7 @@ public class QuasarFireRest {
         } catch (MlException ex) {
             ErrorRS er = new ErrorRS();
             er.setDescription(ex.getMessage());
-            if (ex.getCodigo() != null) {
-                er.setCode(ex.getCodigo().toString());
-            }
+            er.setCode(ex.getClass().getSimpleName());
             return new ResponseEntity(er, HttpStatus.NOT_FOUND);
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -82,9 +78,7 @@ public class QuasarFireRest {
         } catch (MlException ex) {
             ErrorRS er = new ErrorRS();
             er.setDescription(ex.getMessage());
-            if (ex.getCodigo() != null) {
-                er.setCode(ex.getCodigo().toString());
-            }
+            er.setCode(ex.getClass().getSimpleName());
             return new ResponseEntity(er, HttpStatus.NOT_FOUND);
         } catch (Exception ex) {
             ex.printStackTrace();
